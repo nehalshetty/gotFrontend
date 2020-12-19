@@ -1,0 +1,9 @@
+.nav__item {
+  width: 60vw !important;
+}
+
+.brand-logo {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 0;
+}
