@@ -69,8 +69,8 @@ const battleBanner = ({ details: { name, attacker_king, defender_king } }) => {
   );
 };
 
-battleBanner.prototype = {
-  name: PropTypes.string,
+battleBanner.propTypes = {
+  details: PropTypes.object.isRequired,
 };
 
 export default battleBanner;
