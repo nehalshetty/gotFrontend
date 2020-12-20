@@ -1,0 +1,108 @@
+.battle-info {
+  height: 92vh;
+  background-color: #1a1b26;
+  color: white;
+}
+
+.battle-info__main {
+  width: calc(100% - 50px);
+  height: 100%;
+  margin: auto;
+}
+
+.battle-info__teams > h2 {
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  margin: 0;
+  text-align: center;
+  top: 18px;
+  z-index: 1;
+}
+
+.battle-info__teams {
+  height: 80%;
+}
+
+.banner-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.banner-team1,
+.banner-team2 {
+  width: 50%;
+}
+
+.banner-team1__leader,
+.banner-team2__leader {
+  height: 85%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.banner-team1__leader .leader-details,
+.banner-team2__leader .leader-details {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+}
+
+.banner-team1__leader {
+  box-shadow: 3px 22px 21px -3px black;
+}
+
+.banner-team2__leader {
+  box-shadow: 0px 22px 21px -3px black;
+}
+
+.leader-details > img {
+  height: 130px;
+  width: 130px;
+}
+
+.white-underline {
+  height: 1.6px;
+  width: 40px;
+  margin: 0 auto 7px;
+  background-color: aliceblue;
+}
+
+.banner-team1__battle-metric,
+.banner-team2__battle-metric {
+  height: 15%;
+  display: flex;
+  width: 100%;
+}
+
+.banner-team1__battle-metric {
+  justify-content: flex-end;
+}
+
+.banner-team2__battle-metric .block,
+.banner-team1__battle-metric .block {
+  background-color: #1e232b;
+  width: 23%;
+}
+
+.banner-team1__leader::before,
+.banner-team2__leader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 700px) {
+  .banner-team1,
+  .banner-team2 {
+    width: 100%;
+    height: 50%;
+  }
+}
