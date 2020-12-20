@@ -51,6 +51,10 @@
   text-align: center;
 }
 
+.leader-details h4 {
+  letter-spacing: 4px;
+}
+
 .banner-team1__leader {
   box-shadow: 3px 22px 21px -3px black;
 }
@@ -73,7 +77,7 @@
 
 .banner-team1__battle-metric,
 .banner-team2__battle-metric {
-  height: 15%;
+  height: 12%;
   display: flex;
   width: 100%;
 }
