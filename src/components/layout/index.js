@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import getBattleCount from "../../services/battle/getCount";
-import { Navbar, InputGroup, FormControl } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Navbar } from "react-bootstrap";
+import getLocationList from "../../services/battle/getLocationList";
+import Search from "../search";
 import "./index.css";
 
 const Layout = ({ children, location }) => {
+  const [locations, setLocations] = useState([]);
+
   useEffect(() => {
     (async () => {
-      let res = getBattleCount();
+      let { status, value } = await getLocationList();
+
+      if (status === "success") setLocations(value.data);
     })();
   }, []);
 
@@ -19,35 +23,7 @@ const Layout = ({ children, location }) => {
           className="d-flex justify-content-between align-items-baseline">
           <p className="brand-logo">GOT BattleZ</p>
 
-          <InputGroup className="nav__item">
-            <FormControl
-              placeholder="Search battles"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-              list="locations"
-              //   onChange={(ev) => console.log(ev.target.value)}
-            />
-
-            {/* <InputGroup.Append>
-              <InputGroup.Text id="basic-addon2">@example.com</InputGroup.Text>
-            </InputGroup.Append> */}
-          </InputGroup>
-          <datalist id="locations">
-            <option
-              onClick={(ev) => {
-                console.log(ev.target);
-              }}
-              value="U.S."
-            />
-            <option value="France" />
-            <option value="China" />
-            <option value="Cambodia" />
-            <option value="Chile" />
-            <option value="Canada" />
-            <option value="Poland" />
-          </datalist>
-
-          {/* <NavLink to="/battles">Total 38</NavLink> */}
+          <Search options={locations} />
         </Navbar>
       </header>
       <div>{children}</div>
