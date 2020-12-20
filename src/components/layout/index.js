@@ -6,7 +6,9 @@ import "./index.css";
 
 const Layout = ({ children, location }) => {
   useEffect(() => {
-    let res = getBattleCount();
+    (async () => {
+      let res = getBattleCount();
+    })();
   }, []);
 
   return (
