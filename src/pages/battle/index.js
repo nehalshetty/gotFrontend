@@ -26,7 +26,7 @@ const Battles = (props) => {
 
       setBattleStatus(newStatus);
     })();
-  }, []);
+  }, [props]);
 
   return (
     <div>
