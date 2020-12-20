@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import getBattleCount from "../../services/battle/getBattleCount.js";
+import getBattleCount from "../../services/battle/getCount";
 import { Navbar, InputGroup, FormControl } from "react-bootstrap";
 import "./index.css";
 
