@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const searchBattles = async (query) => {
-  let url = "https://thawing-meadow-51034.herokuapp.com" + "/search" + query;
+  let url = process.env.REACT_APP_API_BASE_URL + "/search" + query;
 
   let result = {
     error: null,
