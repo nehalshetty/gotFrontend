@@ -1,16 +1,18 @@
 import Layout from "./components/layout";
-import { Route, Switch } from "react-router-dom";
+import { NavLink, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BattlePage from "./pages/battle";
 
 function App() {
   return (
     <div className="App">
-      <Layout>APP</Layout>
-
-      <Switch>
-        <Route exact path="/battles" component={() => <>sdsds</>} />
-        <Route path="/roster/:number" component={<>scs</>} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path="/battle" component={BattlePage} />
+          <Route path="/" exact component={() => <>Home</>} />
+          <Route path="*" exact component={() => <>Page Not found</>} />
+        </Switch>
+      </Layout>
     </div>
   );
 }
