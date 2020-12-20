@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import getLocationList from "../../services/battle/getLocationList";
 import Search from "../search";
 import "./index.css";
@@ -20,8 +21,10 @@ const Layout = ({ children, location }) => {
       <header>
         <Navbar
           bg="dark"
-          className="d-flex justify-content-between align-items-baseline">
-          <p className="brand-logo">GOT BattleZ</p>
+          className="nav-bar d-flex justify-content-between align-items-center">
+          <NavLink to="/">
+            <p className="brand-logo">GOT BattleZ</p>
+          </NavLink>
 
           <Search options={locations} />
         </Navbar>

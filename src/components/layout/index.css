@@ -2,6 +2,10 @@
   width: 60vw !important;
 }
 
+.nav-bar a:hover {
+  text-decoration: none;
+}
+
 .brand-logo {
   color: white;
   font-size: 25px;

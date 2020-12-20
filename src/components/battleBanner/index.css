@@ -1,6 +1,6 @@
 .battle-info {
   height: 92vh;
-  background-color: #1a1b26;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -108,5 +108,14 @@
   .banner-team2 {
     width: 100%;
     height: 50%;
+  }
+
+  .leader-details > img {
+    height: 90px;
+    width: 90px;
+  }
+
+  .battle-info__teams > h2 {
+    top: 0;
   }
 }

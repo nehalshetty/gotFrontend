@@ -4,7 +4,7 @@ import searchBattles from "../../services/search/battles";
 import PageLoader from "../../components/pageLoader/index";
 import BattleBanner from "../../components/battleBanner";
 
-const Battles = (props) => {
+const BattlesPage = (props) => {
   const [battleStatus, setBattleStatus] = useState({
     isLoading: true,
     error: null,
@@ -49,4 +49,4 @@ const Battles = (props) => {
   );
 };
 
-export default Battles;
+export default BattlesPage;
