@@ -32,9 +32,12 @@
 }
 
 .search__options > ul > li {
-  /* border-left: 1px solid grey;
-  border-right: 1px solid grey; */
   padding-left: 5px;
+  cursor: pointer;
+}
+
+.search__options > ul > li:hover {
+  background-color: #ebebeb;
 }
 
 @media (max-width: 750px) {
