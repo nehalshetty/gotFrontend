@@ -1,10 +1,11 @@
-import { Alert, Table, Card, Button, Modal } from "react-bootstrap";
-import React, { useState, useEffect } from "react";
+import { Alert, Table, Card, Button, Modal, Badge } from "react-bootstrap";
+import React, { useState, useEffect, useContext } from "react";
 import searchBattles from "../../services/search/battles";
 import PageLoader from "../../components/pageLoader/index";
 import BattleBanner from "../../components/battleBanner";
 import Paginate from "../../components/paginate";
 import "./index.css";
+import BattleCountContext from "../../context/battleCount";
 
 const BattlesPage = (props) => {
   const [battleStatus, setBattleStatus] = useState({
@@ -44,6 +45,10 @@ const BattlesPage = (props) => {
       setBattleStatus(newStatus);
     })();
   }, [props]);
+
+  let {
+    totalBattles: [value, updateTotal],
+  } = useContext(BattleCountContext);
 
   const handleOpenModal = (index) => () => {
     let modalData = { ...modal };
@@ -103,7 +108,14 @@ const BattlesPage = (props) => {
         <>
           <Card>
             <Card.Body>
-              <Card.Title>Battles</Card.Title>
+              <Card.Title className="d-flex justify-content-between">
+                Battles{" "}
+                {value && (
+                  <Badge variant="secondary">
+                    Battles occured till date: {value}
+                  </Badge>
+                )}
+              </Card.Title>
 
               <Table responsive striped bordered hover variant="dark" size="sm">
                 <thead>

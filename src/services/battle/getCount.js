@@ -15,7 +15,7 @@ const getBattleCount = async () => {
     });
 
     result.status = "success";
-    result.value = battleResult;
+    result.value = battleResult.data;
   } catch (err) {
     result.status = "error";
     result.error = err;
