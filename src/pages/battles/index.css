@@ -3,6 +3,19 @@
   max-width: 90vw;
 }
 
+.empty-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.empty-banner img {
+  max-height: 80vh;
+  max-width: 100vw;
+}
+
 @media (max-width: 750px) {
   .modal--large {
     width: 100vw !important;

@@ -108,6 +108,17 @@ const BattlesPage = (props) => {
           </Card>
         </>
       ) : null}
+
+      {!battleStatus.error && battleStatus.data.length === 0 ? (
+        <>
+          <div className="empty-banner">
+            <div>
+              <img alt="No result found" src="/images/empty.png" />
+            </div>
+            <p>No results found!</p>
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };
