@@ -11,3 +11,7 @@
   font-size: 25px;
   margin-bottom: 0;
 }
+
+.brand-logo > span {
+  color: red;
+}

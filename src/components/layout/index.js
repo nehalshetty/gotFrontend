@@ -23,7 +23,9 @@ const Layout = ({ children, location }) => {
           bg="dark"
           className="nav-bar d-flex justify-content-between align-items-center">
           <NavLink to="/">
-            <p className="brand-logo">GOT BattleZ</p>
+            <p className="brand-logo">
+              GOT Battle <span> Z</span>
+            </p>
           </NavLink>
 
           <Search options={locations} />

@@ -13,6 +13,9 @@ const HomePage = () => {
     <>
       <Carousel className="banner">
         <Carousel.Item>
+          <Carousel.Caption>
+            <h3>Welcome to GOT battle arena !</h3>
+          </Carousel.Caption>
           <img
             className="d-block w-100"
             src="/images/banner1.jpg"
