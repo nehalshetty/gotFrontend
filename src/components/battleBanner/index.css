@@ -66,8 +66,18 @@
 }
 
 .leader-details > img {
-  height: 130px;
-  width: 130px;
+  height: 125px;
+  width: 125px;
+}
+
+.leader-details .winner {
+  border-right: 2px solid #18ab9b;
+  border-bottom: 2px solid #18ab9b;
+}
+
+.leader-details .looser {
+  border-right: 2px solid #ea3340;
+  border-bottom: 2px solid #ea3340;
 }
 
 .white-underline {

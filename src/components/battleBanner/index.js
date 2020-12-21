@@ -20,6 +20,7 @@ const battleBanner = ({
     defender_size,
     major_death,
     major_capture,
+    attacker_outcome,
   },
   onClose,
 }) => {
@@ -45,6 +46,7 @@ const battleBanner = ({
                 }}>
                 <div className="leader-details">
                   <Image
+                    className={attacker_outcome === "win" ? "winner" : "looser"}
                     src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/kit-harington-hair-jon-snow-1569167827.jpg?crop=0.439xw:0.878xh;0.0221xw,0.0306xh&resize=480:*"
                     roundedCircle
                   />
@@ -97,6 +99,7 @@ const battleBanner = ({
                 }}>
                 <div className="leader-details">
                   <Image
+                    className={attacker_outcome === "win" ? "looser" : "winner"}
                     src="https://pyxis.nymag.com/v1/imgs/9b0/add/ed0ce49a36d56d8d60477ed89e2eb1aab7-03-ramsay-bolton.rsquare.w700.jpg"
                     roundedCircle
                   />

@@ -2,3 +2,9 @@
   height: 60vh;
   background-size: contain;
 }
+
+@media (max-width: 650px) {
+  .banner img {
+    height: 50vh;
+  }
+}
