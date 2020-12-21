@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import searchBattles from "../../services/search/battles";
 import PageLoader from "../../components/pageLoader/index";
 import BattleBanner from "../../components/battleBanner";
+import Paginate from "../../components/paginate";
 import "./index.css";
 
 const BattlesPage = (props) => {
@@ -10,6 +11,11 @@ const BattlesPage = (props) => {
     isLoading: true,
     error: null,
     data: [],
+  });
+
+  const [paginate, setPaginate] = useState({
+    currentPage: 0,
+    totalPages: 1,
   });
 
   const [modal, setModal] = useState({
@@ -24,7 +30,12 @@ const BattlesPage = (props) => {
       let newStatus = { ...battleStatus };
 
       if (res.status === "success") {
-        newStatus.data = res.value;
+        let { items } = res.value;
+        let totalPages = +res.value.totalPages,
+          currentPage = +res.value.currentPage;
+
+        newStatus.data = items;
+        setPaginate({ currentPage, totalPages });
       } else {
         newStatus.error = res.error;
       }
@@ -46,6 +57,22 @@ const BattlesPage = (props) => {
     modalData.isOpen = false;
     modalData.data = null;
     setModal(modalData);
+  };
+
+  const handlePageChange = (pageNo) => () => {
+    let newQueryString = "";
+    if (props.location.search.indexOf("page") >= 0) {
+      newQueryString = props.location.search.replace(
+        /(page=(\d)+)+/,
+        `page=${pageNo}`
+      );
+    } else {
+      newQueryString = props.location.search
+        ? `&page=${pageNo}`
+        : `?page=${pageNo}`;
+    }
+
+    props.history.push("/battles" + newQueryString);
   };
 
   return (
@@ -103,7 +130,12 @@ const BattlesPage = (props) => {
                 </tbody>
               </Table>
 
-              <Card.Link href="/battles">See all</Card.Link>
+              <Paginate
+                isPaginate={paginate.totalPages > 1}
+                pages={paginate.totalPages}
+                currentPage={paginate.currentPage}
+                onClick={handlePageChange}
+              />
             </Card.Body>
           </Card>
         </>
