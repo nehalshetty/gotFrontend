@@ -15,7 +15,7 @@ const searchBattles = async (query) => {
     });
 
     result.status = "success";
-    result.value = battleResult.data.items;
+    result.value = battleResult.data;
   } catch (err) {
     result.status = "error";
     result.error = err;

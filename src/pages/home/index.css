@@ -1,4 +1,10 @@
 .banner img {
-  height: 60vh;
+  height: 50vh;
   background-size: contain;
+}
+
+@media (max-width: 650px) {
+  .banner img {
+    height: 50vh;
+  }
 }

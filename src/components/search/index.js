@@ -41,7 +41,7 @@ const SearchBar = ({ options, history }) => {
   };
 
   const redirectToBattlePage = (location) => {
-    history.push(`/battle?location=${location}`);
+    history.push(`/battles?location=${location}`);
   };
 
   const handleKeyDown = (e) => {
